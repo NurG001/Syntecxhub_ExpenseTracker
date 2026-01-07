@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss"; /* New way to import Tailwind in v4 */
+
+/* 1. Import Poppins from Google Fonts */
+
+
+@theme {
+  /* 2. Register the font as a utility (font-poppins) */
+  --font-poppins: "Poppins", sans-serif;
+
+  /* 3. Optional: Make Poppins the default font for the whole app */
+  --default-font-family: "Poppins", var(--font-sans);
+}
+
+/* Your global resets (Fixed to allow the background color from your design) */
+:root {
+  background-color: #F8F9FD;
+  color: #2D2D2D;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-poppins);
+}

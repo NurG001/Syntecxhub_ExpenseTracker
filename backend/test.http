@@ -1,0 +1,22 @@
+### Test Signup
+# This creates a new user in your database.
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+    "fullName": "Mike William",
+    "email": "mike@example.com",
+    "password": "password123"
+}
+
+###
+
+### Test Login
+# This logs in the user you just created and returns a JWT token.
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "mike@example.com",
+    "password": "password123"
+}
