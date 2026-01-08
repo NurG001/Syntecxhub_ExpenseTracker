@@ -82,46 +82,46 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
 
         <form onSubmit={handleSubmit} className="space-y-5">
 
-        {/* Income / Expense Toggle */}
-<div className="flex bg-slate-100 p-1.5 rounded-2xl">
-  <button
-    type="button"
-    onClick={() =>
-      setFormData({
-        ...formData,
-        type: 'income',
-        category: 'Income',
-        icon: '💰'
-      })
-    }
-    className={`flex-1 py-3 rounded-xl font-semibold transition-all
-      ${formData.type === 'income'
-        ? 'bg-primary text-white shadow-md shadow-primary/30' // Active Income: Purple bg, White text
-        : 'bg-transparent text-slate-400 hover:text-slate-600'} // Inactive: Transparent
-    `}
-  >
-    Income
-  </button>
+          {/* Unified Color Toggle */}
+          <div className="flex bg-slate-100 p-1.5 rounded-2xl">
+            <button
+              type="button"
+              onClick={() =>
+                setFormData({
+                  ...formData,
+                  type: 'income',
+                  category: 'Income',
+                  icon: '💰'
+                })
+              }
+              className={`flex-1 py-3 rounded-xl font-semibold transition-all duration-200
+                ${formData.type === 'income'
+                  ? 'bg-primary text-white shadow-md shadow-primary/30'
+                  : 'bg-transparent text-slate-400 hover:text-slate-600'}
+              `}
+            >
+              Income
+            </button>
 
-  <button
-    type="button"
-    onClick={() =>
-      setFormData({
-        ...formData,
-        type: 'expense',
-        category: 'Expense',
-        icon: '💸'
-      })
-    }
-    className={`flex-1 py-3 rounded-xl font-semibold transition-all
-      ${formData.type === 'expense'
-        ? 'bg-black text-white shadow-md shadow-black/30' // Active Expense: Black bg, White text
-        : 'bg-transparent text-slate-400 hover:text-slate-600'} // Inactive: Transparent
-    `}
-  >
-    Expense
-  </button>
-</div>
+            <button
+              type="button"
+              onClick={() =>
+                setFormData({
+                  ...formData,
+                  type: 'expense',
+                  category: 'Expense',
+                  icon: '💸'
+                })
+              }
+              className={`flex-1 py-3 rounded-xl font-semibold transition-all duration-200
+                ${formData.type === 'expense'
+                  ? 'bg-primary text-white shadow-md shadow-primary/30'
+                  : 'bg-transparent text-slate-400 hover:text-slate-600'}
+              `}
+            >
+              Expense
+            </button>
+          </div>
 
           {/* Emoji + Source */}
           <div className="flex gap-3">
@@ -132,14 +132,14 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
                   e.stopPropagation();
                   setShowEmojiPicker(v => !v);
                 }}
-                className="w-14 h-14 bg-slate-50 rounded-2xl text-3xl border hover:bg-slate-100"
+                className="w-14 h-14 bg-slate-50 rounded-2xl text-3xl border border-slate-100 hover:bg-slate-100 flex items-center justify-center"
               >
                 {formData.icon}
               </button>
 
               {showEmojiPicker && (
                 <div
-                  className="absolute top-16 left-0 z-50"
+                  className="absolute top-16 left-0 z-50 shadow-2xl rounded-2xl overflow-hidden"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <EmojiPicker
@@ -158,7 +158,7 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
               <Type className="absolute left-4 top-4 text-slate-300" size={20} />
               <input
                 required
-                className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none"
+                className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
                 placeholder="Source (Salary, Freelance, etc.)"
                 value={formData.text}
                 onChange={(e) =>
@@ -174,8 +174,8 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
             <input
               type="number"
               required
-              className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none"
-              placeholder="Amount"
+              className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
+              placeholder="0.00"
               value={formData.amount}
               onChange={(e) =>
                 setFormData({ ...formData, amount: e.target.value })
@@ -189,7 +189,7 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
             <input
               type="date"
               required
-              className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none"
+              className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
               value={formData.date}
               onChange={(e) =>
                 setFormData({ ...formData, date: e.target.value })
@@ -197,15 +197,11 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
             />
           </div>
 
-          {/* Submit */}
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-5 rounded-3xl font-black text-white flex justify-center items-center gap-2 transition-all active:scale-95
-              ${formData.type === 'income'
-                ? 'bg-primary shadow-lg shadow-primary/30'
-                : 'bg-black shadow-lg shadow-black/20'}
-            `}
+            className="w-full py-5 rounded-3xl font-black text-white flex justify-center items-center gap-2 bg-primary shadow-lg shadow-primary/30 transition-all active:scale-95 hover:opacity-90 disabled:opacity-50"
           >
             {loading ? (
               <Loader2 className="animate-spin" />
