@@ -67,22 +67,22 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
     <div className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
       <div className="bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl p-8 relative">
 
-        {/* Close */}
+        {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
           className="absolute right-6 top-6 text-slate-400 hover:text-slate-600"
         >
-          <X size={22} />
+          <X size={24} />
         </button>
 
-        <h2 className="text-2xl font-bold mb-6 text-center">
+        <h2 className="text-2xl font-black mb-6 text-center">
           Add {formData.type === 'income' ? 'Income' : 'Expense'}
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
 
-          {/* ✅ FIXED TOGGLE (Income matches Expense visually) */}
+          {/* Income / Expense Toggle (FIXED) */}
           <div className="flex bg-slate-100 p-1.5 rounded-2xl">
             <button
               type="button"
@@ -96,7 +96,7 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
               }
               className={`flex-1 py-3 rounded-xl font-semibold transition-all
                 ${formData.type === 'income'
-                  ? 'bg-primary text-white shadow-md'
+                  ? 'bg-primary text-white shadow-md shadow-primary/30'
                   : 'bg-transparent text-slate-400 hover:text-slate-600'}
               `}
             >
@@ -115,7 +115,7 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
               }
               className={`flex-1 py-3 rounded-xl font-semibold transition-all
                 ${formData.type === 'expense'
-                  ? 'bg-black text-white shadow-md'
+                  ? 'bg-black text-white shadow-md shadow-black/30'
                   : 'bg-transparent text-slate-400 hover:text-slate-600'}
               `}
             >
@@ -158,8 +158,8 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
               <Type className="absolute left-4 top-4 text-slate-300" size={20} />
               <input
                 required
-                placeholder="Source (Salary, Freelance, etc.)"
                 className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none"
+                placeholder="Source (Salary, Freelance, etc.)"
                 value={formData.text}
                 onChange={(e) =>
                   setFormData({ ...formData, text: e.target.value })
@@ -174,8 +174,8 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
             <input
               type="number"
               required
-              placeholder="Amount"
               className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none"
+              placeholder="Amount"
               value={formData.amount}
               onChange={(e) =>
                 setFormData({ ...formData, amount: e.target.value })
@@ -201,7 +201,7 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-5 rounded-3xl font-bold text-white flex justify-center items-center gap-2 transition-all active:scale-95
+            className={`w-full py-5 rounded-3xl font-black text-white flex justify-center items-center gap-2 transition-all active:scale-95
               ${formData.type === 'income'
                 ? 'bg-primary shadow-lg shadow-primary/30'
                 : 'bg-black shadow-lg shadow-black/20'}
