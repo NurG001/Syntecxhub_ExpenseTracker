@@ -9,13 +9,17 @@
   <strong>A high-performance MERN stack finance tracker focused on clarity, security, and premium data visualization.</strong>
 </p>
 
+<p align="center">
+  <a href="https://expensetracker-nurg001.vercel.app/" target="_blank">
+    <strong>🌐 Live Demo</strong>
+  </a>
+</p>
 ---
 
 **ExpenseTracker** is a professional, mobile-responsive **personal finance management system** built using the **MERN stack**.  
 It combines **secure JWT-based authentication**, **real-time financial analytics**, and **high-fidelity data visualization** within a **dark-themed, UX-focused interface**.
 
 Designed for both **academic evaluation** and **real-world usage**, the application demonstrates strong practices in **frontend architecture**, **API design**, and **data-driven UI engineering**.
-
 
 
 ---
