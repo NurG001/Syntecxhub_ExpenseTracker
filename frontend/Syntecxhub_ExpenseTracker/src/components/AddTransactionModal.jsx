@@ -82,46 +82,46 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
 
         <form onSubmit={handleSubmit} className="space-y-5">
 
-          {/* Income / Expense Toggle (FIXED) */}
-          <div className="flex bg-slate-100 p-1.5 rounded-2xl">
-            <button
-              type="button"
-              onClick={() =>
-                setFormData({
-                  ...formData,
-                  type: 'income',
-                  category: 'Income',
-                  icon: '💰'
-                })
-              }
-              className={`flex-1 py-3 rounded-xl font-semibold transition-all
-                ${formData.type === 'income'
-                  ? 'bg-primary text-white shadow-md shadow-primary/30'
-                  : 'bg-transparent text-slate-400 hover:text-slate-600'}
-              `}
-            >
-              Income
-            </button>
+        {/* Income / Expense Toggle */}
+<div className="flex bg-slate-100 p-1.5 rounded-2xl">
+  <button
+    type="button"
+    onClick={() =>
+      setFormData({
+        ...formData,
+        type: 'income',
+        category: 'Income',
+        icon: '💰'
+      })
+    }
+    className={`flex-1 py-3 rounded-xl font-semibold transition-all
+      ${formData.type === 'income'
+        ? 'bg-primary text-white shadow-md shadow-primary/30' // Active Income: Purple bg, White text
+        : 'bg-transparent text-slate-400 hover:text-slate-600'} // Inactive: Transparent
+    `}
+  >
+    Income
+  </button>
 
-            <button
-              type="button"
-              onClick={() =>
-                setFormData({
-                  ...formData,
-                  type: 'expense',
-                  category: 'Expense',
-                  icon: '💸'
-                })
-              }
-              className={`flex-1 py-3 rounded-xl font-semibold transition-all
-                ${formData.type === 'expense'
-                  ? 'bg-black text-white shadow-md shadow-black/30'
-                  : 'bg-transparent text-slate-400 hover:text-slate-600'}
-              `}
-            >
-              Expense
-            </button>
-          </div>
+  <button
+    type="button"
+    onClick={() =>
+      setFormData({
+        ...formData,
+        type: 'expense',
+        category: 'Expense',
+        icon: '💸'
+      })
+    }
+    className={`flex-1 py-3 rounded-xl font-semibold transition-all
+      ${formData.type === 'expense'
+        ? 'bg-black text-white shadow-md shadow-black/30' // Active Expense: Black bg, White text
+        : 'bg-transparent text-slate-400 hover:text-slate-600'} // Inactive: Transparent
+    `}
+  >
+    Expense
+  </button>
+</div>
 
           {/* Emoji + Source */}
           <div className="flex gap-3">
