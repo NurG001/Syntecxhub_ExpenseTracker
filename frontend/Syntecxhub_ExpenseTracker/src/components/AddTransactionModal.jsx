@@ -71,18 +71,18 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-6 top-6 text-slate-400 hover:text-slate-600"
+          className="absolute right-6 top-6 text-slate-400 hover:text-black transition-colors"
         >
           <X size={24} />
         </button>
 
-        <h2 className="text-2xl font-black mb-6 text-center">
+        <h2 className="text-2xl font-black mb-6 text-center text-black">
           Add {formData.type === 'income' ? 'Income' : 'Expense'}
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
 
-          {/* Unified Color Toggle */}
+          {/* Black & White Toggle */}
           <div className="flex bg-slate-100 p-1.5 rounded-2xl">
             <button
               type="button"
@@ -94,9 +94,9 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
                   icon: '💰'
                 })
               }
-              className={`flex-1 py-3 rounded-xl font-semibold transition-all duration-200
+              className={`flex-1 py-3 rounded-xl font-bold transition-all duration-200
                 ${formData.type === 'income'
-                  ? 'bg-primary text-white shadow-md shadow-primary/30'
+                  ? 'bg-black text-white shadow-lg'
                   : 'bg-transparent text-slate-400 hover:text-slate-600'}
               `}
             >
@@ -113,9 +113,9 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
                   icon: '💸'
                 })
               }
-              className={`flex-1 py-3 rounded-xl font-semibold transition-all duration-200
+              className={`flex-1 py-3 rounded-xl font-bold transition-all duration-200
                 ${formData.type === 'expense'
-                  ? 'bg-primary text-white shadow-md shadow-primary/30'
+                  ? 'bg-black text-white shadow-lg'
                   : 'bg-transparent text-slate-400 hover:text-slate-600'}
               `}
             >
@@ -132,14 +132,14 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
                   e.stopPropagation();
                   setShowEmojiPicker(v => !v);
                 }}
-                className="w-14 h-14 bg-slate-50 rounded-2xl text-3xl border border-slate-100 hover:bg-slate-100 flex items-center justify-center"
+                className="w-14 h-14 bg-slate-50 rounded-2xl text-3xl border border-slate-200 hover:bg-white hover:border-black transition-all flex items-center justify-center"
               >
                 {formData.icon}
               </button>
 
               {showEmojiPicker && (
                 <div
-                  className="absolute top-16 left-0 z-50 shadow-2xl rounded-2xl overflow-hidden"
+                  className="absolute top-16 left-0 z-50 shadow-2xl rounded-2xl overflow-hidden border border-slate-200"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <EmojiPicker
@@ -155,10 +155,10 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
             </div>
 
             <div className="flex-1 relative">
-              <Type className="absolute left-4 top-4 text-slate-300" size={20} />
+              <Type className="absolute left-4 top-4 text-slate-400" size={20} />
               <input
                 required
-                className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
+                className="w-full pl-12 py-4 bg-slate-50 border border-transparent rounded-2xl focus:border-black focus:bg-white focus:ring-0 outline-none transition-all"
                 placeholder="Source (Salary, Freelance, etc.)"
                 value={formData.text}
                 onChange={(e) =>
@@ -170,11 +170,11 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
 
           {/* Amount */}
           <div className="relative">
-            <DollarSign className="absolute left-4 top-4 text-slate-300" size={20} />
+            <DollarSign className="absolute left-4 top-4 text-slate-400" size={20} />
             <input
               type="number"
               required
-              className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
+              className="w-full pl-12 py-4 bg-slate-50 border border-transparent rounded-2xl focus:border-black focus:bg-white focus:ring-0 outline-none transition-all"
               placeholder="0.00"
               value={formData.amount}
               onChange={(e) =>
@@ -185,11 +185,11 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
 
           {/* Date */}
           <div className="relative">
-            <Calendar className="absolute left-4 top-4 text-slate-300" size={20} />
+            <Calendar className="absolute left-4 top-4 text-slate-400" size={20} />
             <input
               type="date"
               required
-              className="w-full pl-12 py-4 bg-slate-50 rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
+              className="w-full pl-12 py-4 bg-slate-50 border border-transparent rounded-2xl focus:border-black focus:bg-white focus:ring-0 outline-none transition-all"
               value={formData.date}
               onChange={(e) =>
                 setFormData({ ...formData, date: e.target.value })
@@ -197,11 +197,11 @@ const AddTransactionModal = ({ isOpen, onClose, onRefresh }) => {
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Main Submit Button - Solid Black */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-5 rounded-3xl font-black text-white flex justify-center items-center gap-2 bg-primary shadow-lg shadow-primary/30 transition-all active:scale-95 hover:opacity-90 disabled:opacity-50"
+            className="w-full py-5 rounded-3xl font-black text-white flex justify-center items-center gap-2 bg-black shadow-xl shadow-black/10 transition-all active:scale-95 hover:opacity-90 disabled:opacity-50"
           >
             {loading ? (
               <Loader2 className="animate-spin" />
