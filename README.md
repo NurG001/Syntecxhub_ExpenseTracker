@@ -1,92 +1,196 @@
-# SyntecxHub Tracker 📊
+<!-- HERO IMAGE -->
+<p align="center">
+  <img src="https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/banner.png" alt="SyntecxHub Tracker Dashboard" width="100%" />
+</p>
 
-**SyntecxHub Tracker** is a professional, mobile-responsive MERN stack application designed for seamless personal finance management. It features high-fidelity data visualizations, secure authentication, and a premium dark-themed interface.
+<h1 align="center">ExpenseTracker</h1>
+<h3 align="center">Track, Analyze, and Optimize Your Finances with Precision 💡</h3>
+<p align="center">
+  <strong>A high-performance MERN stack finance tracker focused on clarity, security, and premium data visualization.</strong>
+</p>
 
 ---
 
-## ✨ Key Features
+**ExpenseTracker** is a professional, mobile-responsive **personal finance management system** built using the **MERN stack**.  
+It combines **secure JWT-based authentication**, **real-time financial analytics**, and **high-fidelity data visualization** within a **dark-themed, UX-focused interface**.
+
+Designed for both **academic evaluation** and **real-world usage**, the application demonstrates strong practices in **frontend architecture**, **API design**, and **data-driven UI engineering**.
+
+
+
+---
+
+## 🖼️ Application Preview & Key Features
+
+### 🔐 Authentication & Onboarding
+
+| Login Screen                    | Signup & Avatar Selection                       |
+| ------------------------------- | ----------------------------------------------- |
+| ![Login](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/login.png) | ![Signup Avatar](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/signup.png) |
 
 ### 🔐 Secure Authentication & Personalization
+- **Advanced Login & Signup** with a modern split-screen layout
+- **JWT-based Authentication** with secure session handling
+- **“Remember Me” Logic** for persistent login sessions
+- **Dynamic Avatar System**  
+  Choose from **14 unique avatar styles** (Avataaars, Notionists, etc.) with live previews
+- **Real-time Profile Updates** using a React Portal-based modal
+---
 
-* **Advanced Login/Signup**: Features a modern split-screen layout with secure JWT-based authentication.
-* **"Remember Me" Logic**: Persistent session management for a smoother user experience.
-* **Dynamic Avatar System**: Users can choose from 14 distinct visual styles (e.g., Avataaars, Notionists) with live previews.
-* **Real-time Profile Management**: Instantly update user details via a React Portal-based modal.
+### 📊 Dashboard Overview
+
+| Dashboard                               |
+| --------------------------------------- |
+| ![Dashboard](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/Dashboard.png) |
 
 ### 📉 Financial Analysis & Visualization
+- **Income vs Expense Growth Chart**  
+  Custom overlapping bar chart:
+  - Income → Dark Purple  
+  - Expense → Light Purple  
+- **Year-based Filtering** for instant historical data insights
+- **Visual Summaries**
+  - Last **60-day income donut chart**
+  - Last **30-day expense bar chart**
+- **Dedicated Analysis Pages**  
+  Area charts and transaction histories for both income and expenses
+---
 
-* **Growth Trend Chart**: A custom-engineered bar chart with overlapping income (dark purple) and expense (light purple) bars for direct comparison.
-* **Comprehensive Filtering**: Integrated year-based filters to view historical financial data instantly.
-* **Visual Summaries**: Last 60-day income donuts and 30-day expense bar charts for quick insights.
-* **Analysis Pages**: Dedicated area charts and transaction histories for both income and expense categories.
+### 📉 Financial Growth Analysis
+
+| Income vs Expense Growth                      | Financial Overview                          |
+| --------------------------------------------- | ------------------------------------------- |
+| ![Growth Chart](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/BarChart%20fin%20overview.jpg) | ![Fin Chart](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/fin%20overview.jpg) |
+
+---
+
+### 📈 Category-wise Analysis
+
+| Income Analysis                                     |
+| --------------------------------------------------- |
+| ![Income Analysis](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/Income.png) |
+
+| Expense Analysis                                      |
+| ----------------------------------------------------- |
+| ![Expense Analysis](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/Expense.png) |
+
+---
+
+### 📱 Mobile Experience
+
+| Mobile Sidebar                                    | Mobile Dashboard                                      |
+| ------------------------------------------------- | ----------------------------------------------------- |
+| ![Mobile Sidebar](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/Mobile%20Sidebar1.jpg) | ![Mobile Dashboard](https://github.com/NurG001/mine/blob/main/project%20img/ExpenseTracker/Mobile%20Dashboard1.jpg) |
 
 ### 📱 Premium UX & Performance
-
-* **Mobile Responsive**: A sliding drawer sidebar with background overlays for a native-app feel on smartphones.
-* **Excel Reporting**: One-click functionality to download filtered transaction history as `.xlsx` files.
-* **Dynamic Sidebar**: A professional dark-indigo (`#0F172A`) navigation pane with active state indicators.
-
+- **Fully Mobile Responsive**
+  - Slide-in drawer sidebar
+  - Background overlays for native-app feel
+- **Excel Export**
+  - Download filtered transactions as `.xlsx`
+- **Dynamic Sidebar**
+  - Dark indigo theme `#0F172A`
+  - Active state indicators for navigation clarity
 ---
 
 ## 🛠️ Technical Stack
 
-* **Frontend**: React.js, Vite, Tailwind CSS.
-* **Icons & Charts**: Lucide-React, Recharts.
-* **Backend**: Node.js, Express.js.
-* **Database**: MongoDB Atlas.
-* **State & Auth**: Context API, Axios, JWT.
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- Lucide-React
+- Recharts
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+
+### State & Authentication
+- Context API
+- Axios
+- JWT (JSON Web Tokens)
 
 ---
 
 ## 🚀 Installation & Setup
 
-1. **Clone the repository**:
+### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/yourusername/syntecxhub-tracker.git
+````
 
-```
+---
 
+### 2️⃣ Install Dependencies
 
-2. **Install Dependencies**:
 ```bash
 # Root directory
 npm install
-# Frontend directory
-cd frontend && npm install
-# Backend directory
-cd ../backend && npm install
 
+# Frontend
+cd frontend
+npm install
+
+# Backend
+cd ../backend
+npm install
 ```
 
+---
 
-3. **Environment Configuration**:
-Create a `.env` file in the `backend` folder:
+### 3️⃣ Environment Configuration
+
+Create a `.env` file inside the `backend` folder:
+
 ```env
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
-
 ```
-
-
-4. **Run the Application**:
-```bash
-# Run Backend (from /backend)
-npm run dev
-# Run Frontend (from /frontend)
-npm run dev
-
-```
-
-
 
 ---
 
+### 4️⃣ Run the Application
+
+```bash
+# Backend
+cd backend
+npm run dev
+
+# Frontend
+cd frontend
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```txt
+syntecxhub-tracker/
+│
+├── frontend/        # React + Vite client
+├── backend/         # Express API & Auth logic
+├── screenshots/     # README images
+└── README.md
+```
+
+---
 
 ## 👨‍💻 Developer
 
-Developed by **Ismail Mahmud**, Software Engineering student at East West University.
+**Ismail Mahmud**
+Software Engineering Student
+East West University, Dhaka
+
+🔹 MERN Stack
+🔹 UI/UX-Focused Design
+🔹 Data Visualization & Fintech Systems
 
 ---
 
-**Would you like me to help you create a "How to Use" section for your README that explains the overlapping chart logic to your evaluators?**
+<p align="center">
+  If you find this project useful or inspiring, consider giving it a <strong>star ⭐</strong>, as it helps showcase high-quality full-stack engineering work.
+</p>
