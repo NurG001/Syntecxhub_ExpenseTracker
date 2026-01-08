@@ -4,7 +4,6 @@
 </p>
 
 <h1 align="center">ExpenseTracker</h1>
-<h3 align="center">Track, Analyze, and Optimize Your Finances with Precision 💡</h3>
 <p align="center">
   <strong>A high-performance MERN stack finance tracker focused on clarity, security, and premium data visualization.</strong>
 </p>
@@ -14,12 +13,8 @@
     <strong>🌐 Live Demo</strong>
   </a>
 </p>
----
 
-**ExpenseTracker** is a professional, mobile-responsive **personal finance management system** built using the **MERN stack**.  
-It combines **secure JWT-based authentication**, **real-time financial analytics**, and **high-fidelity data visualization** within a **dark-themed, UX-focused interface**.
-
-Designed for both **academic evaluation** and **real-world usage**, the application demonstrates strong practices in **frontend architecture**, **API design**, and **data-driven UI engineering**.
+**ExpenseTracker** is a professional, mobile-responsive **personal finance management system** built using the **MERN stack**. It combines **secure JWT-based authentication**, **real-time financial analytics**, and **high-fidelity data visualization** within a **dark-themed, UX-focused interface**. Designed for both **academic evaluation** and **real-world usage**, the application demonstrates strong practices in **frontend architecture**, **API design**, and **data-driven UI engineering**.
 
 
 ---
